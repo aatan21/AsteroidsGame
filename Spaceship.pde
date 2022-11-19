@@ -13,6 +13,22 @@ class Spaceship extends Floater
     yCorners[2] = 8;
     xCorners[3] = -2; 
     yCorners[3] = 0;
-    myCenterX = myCenterY = 250;
-  }  
+    myCenterX = myCenterY = 400;
+    myColor = color(55, 198, 255);
+    myXspeed = myYspeed = 0;
+    myPointDirection = 0;
+  } 
+  public void setXspeed(int a)
+  {
+    myXspeed = a;
+  }
+  public void setYspeed(int a)
+  {
+    myYspeed = a;
+  }
+  public void setLocation(int x, int y)
+  {
+    myCenterX = x;
+    myCenterY = y;
+  }
 }
