@@ -31,4 +31,8 @@ class Spaceship extends Floater
     myCenterX = x;
     myCenterY = y;
   }
+  public void setPointDirection(int a)
+  {
+    myPointDirection = a;
+  }
 }
