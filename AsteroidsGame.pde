@@ -31,6 +31,6 @@ public void keyPressed()
     chad.setXspeed(0);
     chad.setYspeed(0);
     chad.setLocation((int)(Math.random() * 640), (int)(Math.random() * 740));
+    chad.setPointDirection((int)(Math.random() * 361));
   }
 }
-
