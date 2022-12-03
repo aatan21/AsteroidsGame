@@ -1,5 +1,6 @@
 Spaceship chad = new Spaceship();
 Star[] chads = new Star[75];
+Asteroid bob = new Asteroid();
 public void setup() 
 {
   size(600, 600);
@@ -15,17 +16,18 @@ public void draw()
   }
   chad.move();
   chad.show();
+  bob.show();
 }
 public void keyPressed()
 {
   if (key == 'a' || key == 'A') {
-    chad.turn(-20);
+    chad.turn(-30);
   }
   if (key == 'd' || key == 'D') {
-    chad.turn(20);
+    chad.turn(30);
   }
   if (key == 'w' || key == 'W') {
-    chad.accelerate(1);
+    chad.accelerate(0.5);
   }
   if (key == 'e' || key == 'E') {
     chad.setXspeed(0);
