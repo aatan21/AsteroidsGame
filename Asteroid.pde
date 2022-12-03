@@ -21,16 +21,41 @@ class Asteroid extends Floater
     myCenterX = (int)(Math.random() * 601);
     myCenterY = (int)(Math.random() * 601);
     myColor = color(113, 118, 122);
-    myXspeed = myYspeed = (int)(Math.random() * 5);
+    myXspeed = myYspeed = (int)(Math.random() * 2 + 1);
     myPointDirection = 0;
-    rSpeed = (int)(Math.random() * 9);
+    rSpeed = (int)(Math.random()* 8 + 1);
   }
-  public int getCenterX()
+  public void move()
   {
-    return (int)myCenterX;
+    turn(rSpeed);
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed;     
+
+    //wrap around screen    
+    if(myCenterX > width)
+    {     
+      myCenterX = 0;    
+    }    
+    else if (myCenterX < 0)
+    {     
+      myCenterX = width;    
+    }    
+    if(myCenterY > height)
+    {    
+      myCenterY = 0;    
+    } 
+    
+    else if (myCenterY < 0)
+    {     
+      myCenterY = height;    
+    }
   }
-  public int getCenterY()
+  public double getX()
   {
-    return (int)myCenterY;
+    return myCenterX;
+  }
+  public double getY()
+  {
+    return myCenterY;
   }
 }
