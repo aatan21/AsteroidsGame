@@ -1,8 +1,8 @@
 Spaceship chad = new Spaceship();
-Star[] chads = new Star[100];
+Star[] chads = new Star[75];
 public void setup() 
 {
-  size(800, 800);
+  size(600, 600);
   for(int i = 0; i < chads.length; i++){
     chads[i] = new Star();
   }
@@ -30,7 +30,6 @@ public void keyPressed()
   if (key == 'e' || key == 'E') {
     chad.setXspeed(0);
     chad.setYspeed(0);
-    chad.setLocation((int)(Math.random() * 640), (int)(Math.random() * 740));
-    chad.setPointDirection((int)(Math.random() * 361));
+    chad.setLocation((int)(Math.random() * 440), (int)(Math.random() * 540));
   }
 }
