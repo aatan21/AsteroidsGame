@@ -1,6 +1,6 @@
 class Asteroid extends Floater
 {
-  protected int rSpeed;
+  protected double rSpeed;
   public Asteroid()
   {
     corners = 6;
@@ -23,7 +23,7 @@ class Asteroid extends Floater
     myColor = color(113, 118, 122);
     myXspeed = myYspeed = (int)(Math.random() * 2 + 1);
     myPointDirection = 0;
-    rSpeed = (int)(Math.random()* 8 + 1);
+    rSpeed = (Math.random()* 17 - 8);
   }
   public void move()
   {
