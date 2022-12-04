@@ -44,6 +44,6 @@ public void keyPressed()
   if (key == 'e' || key == 'E') {
     chad.setXspeed(0);
     chad.setYspeed(0);
-    chad.setLocation((int)(Math.random() * 440), (int)(Math.random() * 540));
+    chad.setLocation((int)(Math.random() * 580), (int)(Math.random() * 580));
   }
 }
