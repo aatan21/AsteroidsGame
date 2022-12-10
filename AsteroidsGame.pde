@@ -1,7 +1,8 @@
 Spaceship chad = new Spaceship();
 Star[] chads = new Star[75];
-//Asteroid bob = new Asteroid();
 ArrayList <Asteroid> bobsList = new ArrayList <Asteroid>();
+ArrayList <Bullet> bullets = new ArrayList <Bullet>();
+//Bullet bob = new Bullet(chad);
 public void setup() 
 {
   size(600, 600);
@@ -27,8 +28,20 @@ public void draw()
     if(d < 30)
       bobsList.remove(i);
   }
+  for(int i = 0; i < bullets.size(); i++){
+    bullets.get(i).move();
+    bullets.get(i).show();
+    for(int j = 0; j < bobsList.size(); j++){
+      float d = dist((float)bobsList.get(j).getX(), (float)bobsList.get(j).getY(), (float)bullets.get(i).getX(), (float)bullets.get(i).getY());
+      if(d < 15){
+        bullets.remove(i);
+        bobsList.remove(j);
+        break;
+      }
+    }
+  }
   //bob.show();
-  //bob.move(); 
+  //bob.move();
 }
 public void keyPressed()
 {
@@ -45,5 +58,8 @@ public void keyPressed()
     chad.setXspeed(0);
     chad.setYspeed(0);
     chad.setLocation((int)(Math.random() * 580), (int)(Math.random() * 580));
+  }
+  if (key == ' ') {
+    bullets.add(new Bullet(chad));
   }
 }
